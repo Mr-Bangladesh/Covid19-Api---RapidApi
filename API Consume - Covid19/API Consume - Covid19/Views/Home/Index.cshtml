@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model CountryModel
+@{
+    var covidData = ViewBag.covidDataModel;
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="container">
+    <form method="post">
+        <input asp-for="Name" placeholder="Country Name"/>
+        <input asp-for="Date" />
+        <input type="submit" value="submit" />
+    </form>
+
+    <br />
+    @{
+        if(covidData != null)
+        {
+            foreach(var data in covidData)
+            {
+                <h1>@data.Country</h1>
+                foreach(var province in data.Provinces)
+                {
+                    <p>Name - @province.Name</p>
+                    <p>Confirmed - @province.Confirmed</p>
+                    <p>Recovered - @province.Recovered</p>
+                    <p>Deaths - @province.Deaths</p>
+                    <p>Active - @province.Active</p>
+                }
+            }
+        }
+        
+    }
+    
+</div>

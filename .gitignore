@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/API Consume - Covid19/.vs
+/API Consume - Covid19/API Consume - Covid19/bin/Debug/net5.0
+/API Consume - Covid19/API Consume - Covid19/obj
